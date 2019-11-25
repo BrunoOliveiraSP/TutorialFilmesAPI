@@ -21,6 +21,7 @@ namespace MovieAPI.Controllers
             try
             {
                 business.Inserir(filme);
+                
                 return Ok();
             }
             catch (System.Exception ex)
