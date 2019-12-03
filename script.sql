@@ -37,3 +37,6 @@ insert into tb_filme (nm_filme, ds_genero, vl_avaliacao, bt_disponivel, dt_estre
 
 select * from tb_filme;
 
+
+
+-- dotnet ef dbcontext scaffold "server=localhost;user id=root;password=1234;database=moviedb" Pomelo.EntityFrameworkCore.MySql -o Models --data-annotations --force
