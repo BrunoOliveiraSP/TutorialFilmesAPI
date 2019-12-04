@@ -8,6 +8,7 @@ namespace MovieAPI.Models
     {
         public moviedbContext()
         {
+            
         }
 
         public moviedbContext(DbContextOptions<moviedbContext> options)
@@ -21,9 +22,10 @@ namespace MovieAPI.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            // optionsBuilder.UseLazyLoadingProxies(true);
+
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseMySql("server=localhost;user id=root;password=1234;database=moviedb");
             }
         }
@@ -88,6 +90,7 @@ namespace MovieAPI.Models
                 entity.Property(e => e.NmFilme)
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
+
             });
 
             OnModelCreatingPartial(modelBuilder);

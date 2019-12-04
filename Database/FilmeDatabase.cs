@@ -2,7 +2,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Collections;
 using System.Collections.Generic;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace MovieAPI.Database
 {
@@ -38,7 +38,18 @@ namespace MovieAPI.Database
 
         public List<Models.TbFilme> ListarTodos()
         {
-            List<Models.TbFilme> filmes = db.TbFilme.ToList();
+            List<Models.TbFilme> filmes = db.TbFilme
+                                            .ToList();
+            return filmes;
+        }
+
+        public List<Models.TbFilme> ConsultarPorNome(string nome)
+        {
+            List<Models.TbFilme> filmes = db.TbFilme
+                                            .Include(x => x.TbAtor)     // inclui Atores no resultado
+                                            .Include(x => x.TbDiretor)  // inclui Diretor no resultado
+                                            .Where(x => x.NmFilme.Contains(nome))
+                                            .ToList();
             return filmes;
         }
 

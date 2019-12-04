@@ -40,3 +40,15 @@ select * from tb_filme;
 
 
 -- dotnet ef dbcontext scaffold "server=localhost;user id=root;password=1234;database=moviedb" Pomelo.EntityFrameworkCore.MySql -o Models --data-annotations --force
+
+/*
+
+    1. Introducao ao BD Relacional. Mostrar API e Tela funcionando
+	2. Modelos Request. Funcionalidade Inserir. API. Versionamento de API
+	3. Modelos Request. Funcionalidade Inserir. WinForm
+	4. Retorno de ID no POST
+    5. Modelos Response. Funcionalidade Consultar. API
+	6. Modelos Response. Funcionalidade Consultar. WinForms. BindingList.
+	7. Modelos UI. Consultar carregando Coluna Diretor e Qtd Atores
+
+*/

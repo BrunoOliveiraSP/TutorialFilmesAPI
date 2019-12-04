@@ -30,8 +30,11 @@ namespace MovieAPI.Models
         [Column("dt_estreia", TypeName = "datetime")]
         public DateTime DtEstreia { get; set; }
 
+       
         [InverseProperty("IdFilmeNavigation")]
         public virtual ICollection<TbAtor> TbAtor { get; set; }
+      
+      
         [InverseProperty("IdFilmeNavigation")]
         public virtual ICollection<TbDiretor> TbDiretor { get; set; }
     }
